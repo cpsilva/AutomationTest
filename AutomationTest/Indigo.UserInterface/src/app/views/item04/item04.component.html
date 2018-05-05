@@ -1,3 +1,51 @@
-<p>
-  item04 works!
-</p>
+<section class="content center">
+  <section class="invoice">
+    <div class="col-xs-12">
+      <p class="lead">Item 04: Informções em tempo real</p>
+      <p class="lead">Objetivo: Clicar no botão e capturar o texto resultante da operação e exibir na aplicação</p>
+    </div>
+    <div class="row ">
+      <div class="col-xs-10">
+        <div class="form-group">
+          <label for="numero1">Número 1</label>
+          <input type="text" id="numero1" name="numero1" disabled class="form-control" [(ngModel)]="operacao.numero1">
+        </div>
+        <div class="form-group">
+          <label for="numero2">Número 2</label>
+          <input type="text" id="numero2" name="numero2" disabled class="form-control" [(ngModel)]="operacao.numero2">
+        </div>
+        <div class="form-group">
+          <label for="soma">A soma dos números é</label>
+          <input type="text" id="soma" name="soma" class="form-control" [(ngModel)]="model.soma">
+        </div>
+        <div class="form-group">
+          <label for="subtracao">A subtração dos números é</label>
+          <input type="text" id="subtracao" name="subtracao" class="form-control" [(ngModel)]="model.subtracao">
+        </div>
+        <button type="submit" class="btn btn-default pull-left" id="btnOperacao" (click)="operacoes()">
+          <i class="fa fa-check"></i> Realizar Operação
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="invoice">
+    <div class="row invoice-info">
+      <div class="col-xs-12">
+        <p class="lead">Resultados:</p>
+      </div>
+      <div class="col-sm-10 col-xs-10">
+        <div class="form-group">
+          <input class="form-control" type="text" id="textResult"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <button type="submit" class="btn btn-info pull-right" id="goToItem03" routerLink="/item03">
+          <i class="fa fa-save"></i> Proxima Tarefa
+        </button>
+      </div>
+    </div>
+  </section>
+</section>

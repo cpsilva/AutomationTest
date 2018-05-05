@@ -90,8 +90,14 @@ namespace IndigoTest
 
         private static void Item04(IWebDriver driver)
         {
-            //Copiar texto de dois inputs, no terceiro input informar a soma dos dois numeros, no quarto imprimir a subtração dos dois 
-            throw new NotImplementedException();
+            //Acionar botão de realizar operação e capturar o resultado da soma e subtração informados
+            driver.FindElement(By.Id("btnOperacao")).Click();
+
+            var soma = driver.FindElement(By.Id("soma")).GetAttribute("ng-reflect-model");
+            var subtracao = driver.FindElement(By.Id("subtracao")).GetAttribute("ng-reflect-model");
+            IWebElement result = driver.FindElement(By.Id("textResult"));
+            result.SendKeys("Soma igual a "+ soma + " " + " e subtração igual a " + subtracao);
+            
         }
 
         private static void Item05(IWebDriver driver)
@@ -122,7 +128,7 @@ namespace IndigoTest
             Item01(driver);
             Item02(driver);
             Item03(driver);
-            //Item04(driver);
+            Item04(driver);
             //Item05(driver);
         }
     }
