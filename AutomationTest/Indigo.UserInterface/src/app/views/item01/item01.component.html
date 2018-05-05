@@ -1,0 +1,104 @@
+<section class="content center">
+  <section class="invoice">
+    <div class="col-xs-12">
+      <p class="lead">Item 01: Acesso à informações de uma tabela</p>
+      <p class="lead">Objetivo: Você deve capturar os itens da tabela abaixo e inserir nos campos abaixo conforme pedido, em seguida o robô deve clicar no botão "Proxima tarefa"</p>
+    </div>
+    <table class="table table-bordered" id="tabela">
+      <thead>
+        <tr>
+          <th>Codigo</th>
+          <th>Nome</th>
+          <th>Apelido</th>
+          <th>Trabalho</th>
+          <th>E-mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="codigo">09938</td>
+          <td>Senor Abravanel</td>
+          <td id="apelido">Silvio Santos</td>
+          <td>Apresentador</td>
+          <td>mah@oe.lombardi.com.br</td>
+        </tr>
+        <tr>
+          <td id="codigo">33439</td>
+          <td>Sonia Maria Vieira</td>
+          <td id="apelido">Susana Vieira</td>
+          <td>Atriz</td>
+          <td>susana.vieira@globo.com</td>
+        </tr>
+        <tr>
+          <td id="codigo">44332</td>
+          <td>Wesley Oliveira da Silva</td>
+          <td id="apelido">Wesley Safadão</td>
+          <td>Cantor</td>
+          <td>cabelo@vienahair.com.br</td>
+        </tr>
+        <tr>
+          <td id="codigo">55543</td>
+          <td>Madonna Louise Ciccone</td>
+          <td id="apelido">Madonna</td>
+          <td>Cantora</td>
+          <td>madonna@ano80.com</td>
+        </tr>
+        <tr>
+          <td id="codigo">21234</td>
+          <td>Robyn Rihanna Fenty</td>
+          <td id="apelido">Rihana</td>
+          <td>Cantora</td>
+          <td>under@my.umbrella.com</td>
+        </tr>
+        <tr>
+          <td id="codigo">55433</td>
+          <td>Norma Jeane Mortenson</td>
+          <td id="apelido">Marilyn Monroe</td>
+          <td>Atriz</td>
+          <td>happybirthday@2you.com</td>
+        </tr>
+        <tr>
+          <td id="codigo">22443</td>
+          <td>Caryn Eliane Johnson</td>
+          <td id="apelido">Whoppi Goldberg</td>
+          <td>Atriz</td>
+          <td>freira@mudancadehabito.com.br</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="invoice">
+    <div class="row invoice-info">
+      <div class="col-xs-12">
+        <p class="lead">Resultados:</p>
+      </div>
+      <div class="col-sm-4 col-xs-8">
+        <div class="form-group">
+          <label class="control-label required" for="qtdItens"> Quantos itens há na tabela?</label>
+          <input type="text" class="form-control" id="qtdItens" name="qtdItens" required>
+          <span class="help-block"></span>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-8">
+        <div class="form-group">
+          <label class="control-label required" for="orderedByCodigo"> Coloque todos os itens ordenados por "Código"</label>
+          <textarea rows="8" type="text" class="form-control" id="orderedByCodigo" name="orderedByCodigo"></textarea>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-6">
+        <div class="form-group">
+          <label class="control-label required" for="orderedByApelido"> Coloque todos os itens ordenados por "Apelido"</label>
+          <textarea rows="8" type="text" class="form-control" id="orderedByApelido" name="orderedByApelido"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <button type="submit" class="btn btn-info pull-right" id="goToItem02" routerLink="/item02">
+          <i class="fa fa-save"></i> Proxima Tarefa
+        </button>
+      </div>
+    </div>
+  </section>
+</section>
