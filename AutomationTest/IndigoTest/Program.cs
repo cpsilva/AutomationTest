@@ -1,6 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace IndigoTest
@@ -38,6 +40,7 @@ namespace IndigoTest
 
         private static void Item02(IWebDriver driver)
         {
+            //Copiar texto de um paragrafo e colar em um textarea
             var text = driver.FindElement(By.XPath("//*[@id = 'text']/p"));
 
             IWebElement textAreaPaste = driver.FindElement(By.Id("textArea"));
@@ -49,7 +52,40 @@ namespace IndigoTest
         private static void Item03(IWebDriver driver)
         {
             //Preencher input com nome, input com e-mail, selecionar em checkbox os SO que não são da microsoft, selecionar sexo no radiobutton, selecionar cargo no dropdown
-            throw new NotImplementedException();
+            IWebElement nome = driver.FindElement(By.Id("textName"));
+            IWebElement email = driver.FindElement(By.Id("textEmail"));
+            nome.SendKeys("Caio Pires Silva");
+            email.SendKeys("caiopirees@hotmail.com");
+
+            // Selecionar os sistemas operacionais que não pertencem a microsoft
+            // Procuro por elementos com o name SO
+            IList<IWebElement> chkBx_SO = driver.FindElements(By.Name("SO"));
+
+            // Com a contagem dos elementos posso controlar quantidade de checkboxs
+            int aux = chkBx_SO.Count;
+
+            // inicio um loop para varrer todos os checkboxs
+            for (int i = 0; i < aux; i++)
+            {
+                // Armazeno na variavel o atributo id
+                String Value = chkBx_SO.ElementAt(i).GetAttribute("id");
+
+                // faço uma verificação para excluir os SO da microsoft
+                if (!Value.Equals("win10") && !Value.Equals("winXP") && !Value.Equals("msDOS"))
+                {
+                    chkBx_SO.ElementAt(i).Click();
+                }
+            }
+
+            //Seleciona o sexo
+            IList<IWebElement> rdBtn_Sexo = driver.FindElements(By.Name("sex"));
+            rdBtn_Sexo.ElementAt(0).Click();
+
+            //Selecionar Cargo no DropList
+            SelectElement dropList = new SelectElement(driver.FindElement(By.Id("dropListCargo")));
+            dropList.SelectByText("Analista Desenvolvedor");
+
+            driver.FindElement(By.Id("goToItem04")).Click();
         }
 
         private static void Item04(IWebDriver driver)
@@ -83,8 +119,8 @@ namespace IndigoTest
             driver.FindElement(By.Id("iniciarTeste")).Click();
 
             //Login(driver);
-            //Item01(driver);
-            //Item02(driver);
+            Item01(driver);
+            Item02(driver);
             Item03(driver);
             //Item04(driver);
             //Item05(driver);
