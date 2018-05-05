@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/AutomationTest/IndigoTest/obj/Debug
+/AutomationTest/.vs/AutomationTest/v15
